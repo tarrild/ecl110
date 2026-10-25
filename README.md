@@ -77,11 +77,11 @@ Communication is done using MODBUS RTU. The following values have been gathered 
 |  ??? | R? | 2108 | N/A |  |
 |  ??? | R? | 2109 | N/A |  |
 |  ??? | R? | 2110 | N/A |  |
-|   | R? | 4001 | N/A | **Pump on/off** |
-|   | R? | 4100 | N/A | **Valve open?** |
-|   | R? | 4101 | N/A | **Valve shut?** |
-|   | RW | 4200 | N/A | **Desired Mode (1=AUTO/2=COMFORT/3=SETBACK/4=STANDBY)** |
-|   | R? | 4210 | N/A | **Actual mode ?** |
+|  Pump (P1) | R? | 4001 | N/A | 0 = off<br/>1 = on |
+|  Valve opening | R? | 4100 | N/A | 0 = no movement<br/>1 = opening (sent as impulses for each movement with about 10 s between each impulse) |
+|  Valve closing | R? | 4101 | N/A | 0 = no movement<br/>1 = closing (always closing when in Standby mode) |
+|  Actual mode | RW | 4200 | N/A | 1 = AUTO<br/>2 = COMFORT<br/>3 = SETBACK<br/>4 = STANDBY |
+|  Mode vs Auto mode | R? | 4210 | N/A | Will show mode selected by auto or the selected mode if identical to the mode auto would select. If mode is not selected by auto and is different than what auto would select value will be Manual<br/>0 = Manuel <br/>2 = COMFORT<br/>3 = SETBACK<br/>4 = STANDBY |
 |  ??? | R? | 4614 | N/A |  |
 |  ECA address (choice of room panel / remote control) | RW | 11009 | 7010 | Application 130 only.<br/>0 = OFF<br/>1 = A<br/>2 = B |
 |  Auto-reduct (setback temp. dependent on outdoor temp.) | RW | 11010 | 5011 | Application 130 only. TODO: FORMAT |
@@ -103,7 +103,7 @@ Communication is done using MODBUS RTU. The following values have been gathered 
 |  P1 heat T (heat demand) | RW | 11077 | 7078 | TODO: FORMAT |
 |  Priority (priority for return temp. limitation) | RW | 11084 | 4085 | Application 130 only. TODO: FORMAT |
 |  Standby T (standby temperature) | RW | 11092 | 7093 | TODO: FORMAT |
-|  ??? | R? | 11099 | N/A | Application 130 only. Accumulated Outside Temperature? |
+|  Moving Average Outside Temperature | R? | 11099 | N/A | Application 130 only. Moving Average Outside Temperature in 0.1°C (Accumulated Outside Temperature) |
 |  Ext. (external override) | RW | 11140 | 7141 | TODO: FORMAT |
 |  Knee point | RW | 11161 | 7162 | TODO: FORMAT |
 |  ??? | R? | 11173 | N/A | Application 116 only. |
