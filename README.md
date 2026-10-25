@@ -103,7 +103,7 @@ Communication is done using MODBUS RTU. The following values have been gathered 
 |  P1 heat T (heat demand) | RW | 11077 | 7078 | TODO: FORMAT |
 |  Priority (priority for return temp. limitation) | RW | 11084 | 4085 | Application 130 only. TODO: FORMAT |
 |  Standby T (standby temperature) | RW | 11092 | 7093 | TODO: FORMAT |
-|  Moving Average Outside Temperature | R? | 11099 | N/A | Application 130 only. Moving Average Outside Temperature in 0.1°C (Accumulated Outside Temperature) |
+|  Accumulated Outdoor Temperature | R? | 11099 | N/A | Application 130 only. Accumulated Outdoor Temperature in 0.1°C |
 |  Ext. (external override) | RW | 11140 | 7141 | TODO: FORMAT |
 |  Knee point | RW | 11161 | 7162 | TODO: FORMAT |
 |  ??? | R? | 11173 | N/A | Application 116 only. |
@@ -126,16 +126,16 @@ Communication is done using MODBUS RTU. The following values have been gathered 
 |  ??? | R? | 11190 | N/A | Application 116 only. |
 |  Daylight (daylight saving time changeover) | RW | 11197 | 7198 | TODO: FORMAT |
 |  ECL address (master / slave address) | RW | 11198 | 7199 | TODO: FORMAT |
-|  ??? | R? | 11200 | N/A | S1 actual readout in 0.1°C, 192°C = not connected |
-|  ??? | R? | 11201 | N/A | S2 actual readout in 0.1°C, 192°C = not connected |
-|  ??? | R? | 11202 | N/A | S3 actual readout in 0.1°C, 192°C = not connected |
-|  ??? | R? | 11203 | N/A | S4 actual readout in 0.1°C, 192°C = not connected |
+|  Actual outdoor temperature (S1) | R? | 11200 | N/A | S1 actual readout in 0.1°C, 192°C = not connected |
+|  Actual room temperature (S2) | R? | 11201 | N/A | S2 actual readout in 0.1°C, 192°C = not connected |
+|  Actual flow temperature (S3) | R? | 11202 | N/A | S3 actual readout in 0.1°C, 192°C = not connected |
+|  Actual return temperature (S4) | R? | 11203 | N/A | S4 actual readout in 0.1°C, 192°C = not connected |
 |  ??? | R? | 11220 | N/A |  |
 |  ??? | R? | 11221 | N/A |  |
 |  ??? | R? | 11222 | N/A |  |
 |  ??? | R? | 11223 | N/A |  |
 |  ??? | R? | 11228 | N/A | Application 130 only. S2 desired readout |
-|  ??? | R? | 11229 | N/A | S3 desired readout |
+|  Desired flow temperature (S3) | R? | 11229 | N/A | S3 desired readout |
 |  ??? | R? | 60007 | N/A |  |
 |  ??? | RW | 60020 | N/A |  |
 |  ??? | R? | 60025 | N/A |  |
